@@ -1,0 +1,246 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "San Francisco",
+          "description": "First trip by myself! I went to visit some friends in the Bay Area."
+        },
+        "geometry": {
+          "coordinates": [
+            -122.41973440595407,
+            37.779150072557556
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Los Angeles",
+          "description": "Where I live!"
+        },
+        "geometry": {
+          "coordinates": [
+            -118.24287065627514,
+            34.05379246519999
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "San Diego",
+          "description": "Been here once. It's okay."
+        },
+        "geometry": {
+          "coordinates": [
+            -117.16273812792895,
+            32.71742940811866
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "New York",
+          "description": "One of my first trips with my friends. Was unable to explore this city in 5 days."
+        },
+        "geometry": {
+          "coordinates": [
+            -73.98665709210235,
+            40.730191111408004
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Madrid",
+          "description": "The people in Madrid were so chill."
+        },
+        "geometry": {
+          "coordinates": [
+            -3.703486842193996,
+            40.41604967827806
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Barcelona",
+          "description": "It was chill here, but not as chill as Madrid. Still a nice city, except the part where they have a huge Christopher Columbus memorial."
+        },
+        "geometry": {
+          "coordinates": [
+            2.177604700547306,
+            41.383485720526494
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "London",
+          "description": "The weathers always gloomy. Felt like an English New York."
+        },
+        "geometry": {
+          "coordinates": [
+            -0.12836007015508244,
+            51.50768159368474
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Brighton",
+          "description": "The people were so friendly here. Theres also really fresh fish!"
+        },
+        "geometry": {
+          "coordinates": [
+            -0.14108582275045478,
+            50.82140534309502
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Paris",
+          "description": "Came here during my trip to Europe. Beautiful city!"
+        },
+        "geometry": {
+          "coordinates": [
+            2.348368774991343,
+            48.8535281262628
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Versailles",
+          "description": "Not too far from Paris. Lots of gold."
+        },
+        "geometry": {
+          "coordinates": [
+            2.126689862589842,
+            48.803564407152436
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Rome",
+          "description": "I'm positive this city worse drivers than LA."
+        },
+        "geometry": {
+          "coordinates": [
+            12.482768752099446,
+            41.89413613643384
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Vatican City",
+          "description": "I thought this would be bigger, but its literally just the Pope's bacislla"
+        },
+        "geometry": {
+          "coordinates": [
+            12.457244064517027,
+            41.902252027889205
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Florence",
+          "description": "Beautiful city. However, I shouldve explored the city on a moped."
+        },
+        "geometry": {
+          "coordinates": [
+            11.255601967740574,
+            43.769864300591536
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Milan",
+          "description": "Got stranded at the train station here because my flight prior was delayed :("
+        },
+        "geometry": {
+          "coordinates": [
+            9.188646061947594,
+            45.46402566913571
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Dhaka",
+          "description": "This is where my parents grew up."
+        },
+        "geometry": {
+          "coordinates": [
+            90.40264789522962,
+            23.78619514089307
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Jamalpur",
+          "description": "Parent's village."
+        },
+        "geometry": {
+          "coordinates": [
+            89.95402646378847,
+            24.91519136918646
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "coordinates": [
+            [
+            -118.24287065627514,
+            34.05379246519999
+            ],
+            [
+             -122.41973440595407,
+             37.779150072557556
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  }

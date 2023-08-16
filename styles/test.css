@@ -1,0 +1,42 @@
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "main_content"
+            "footer";
+    }
+
+    .header {
+        grid-template-areas:
+            "nametitle"
+            "links";
+    }
+
+    #front {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #photobio {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "pfp"
+            "bbio";
+        max-width: 100%;
+    }
+
+    #bbio {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    
+    #pfp {
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+
+    /* Additional adjustments for the other sections */
+}
