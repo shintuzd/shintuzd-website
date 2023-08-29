@@ -267,6 +267,11 @@ body{
 
 #card_container{
     max-width: 300px;
+    margin-right: 450px;
+}
+
+#card_container2{
+    max-width: 300px;
 }
 .card{
     background-color: white;
@@ -289,6 +294,11 @@ body{
   font-size: 24px;
   font-weight: 600;
   margin-top: 16px;
+}
+
+#cardokun{
+    display: grid;
+    grid-template-areas: "card_container2 card_container";
 }
 
 /* Style p element */
