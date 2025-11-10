@@ -1,476 +1,444 @@
-/* This is for the main page */
-p{
-    margin: 0px;
-}
-
-body{
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     display: grid;
-    grid-template-areas: "header" "main_content" "footer";
+    grid-template-areas: 
+      "header"
+      "main_content"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    grid-template-rows: auto auto auto;
-    background-color: rgb(255, 255, 255); 
+    background-color: #fff; 
     color: #303030;
-}
-
-.header{
-    grid-area: header;
-    grid-template-areas: "plaque navigation";
-    display: grid;
-    margin-top: 10px;
-}
-
-.main_content{
+    line-height: 1.6;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .main_content {
     grid-area: main_content;
-    display: grid;
-}
-
-.footer{
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .footer {
     grid-area: footer;
     text-align: center;
-    margin-top: 20px;
-}
-
-/* This is for the header */
-.header a{
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Header */
+  .header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .header a {
     text-decoration: none;
     color: #303030;
-}
-
-.header a:hover{
+  }
+  
+  .header a:hover {
     text-decoration: underline;
-}
-
-#plaque{
-    grid-area: plaque;
-    grid-template-areas: "name" "subtitle";
-    display: grid;
-    margin: auto;
-    line-height: 1;
-    align-self: center;
-    margin-top: 10px;
-    padding-right: 10px;
-}
-
-#name{
-    grid-area: name;
-    font-size: 30px;
+  }
+  
+  #plaque {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  #name {
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
-    color: #303030;
-    font-weight: 700;
-    letter-spacing: normal;
-}
-
-#name:hover{
-    text-decoration: underline;
-}
-
-#subtitle{
-    grid-area: subtitle;
-    font-weight: 100;
-    font-size: 20px;
-}
-
-#navigation{
-    grid-area: navigation;
-    font-size: 20px;
-    color: #303030;
-    text-decoration: none;
+    color: #000;
+  }
+  
+  #subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 0.25rem;
     align-self: center;
-    margin: auto;
-}
-
-#navigation a {
-    margin-right: 10vh; /* Adjust the value to increase or decrease the space */
-}
-
-/* This is for the titles */
-
-#hero{
-    display: grid;
-    line-height: 20px;
+    font-weight: 100
+  }
+  
+  #navigation {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    font-size: 1rem
+  }
+  
+  /* Hero Section */
+  #hero {
     text-align: center;
-}
-
-#hero h1 {
+    margin: 2rem 0;
+  }
+  
+  #hero h1 {
     color: #303030;
-    font-size: 50px;
-}
-
-#front{
-    margin-left: 70px;
-    margin-right: 70px
-}
-
-/* This is for the landing page*/
-
-#photobio{
-    grid-area: photobio;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  #front {
+    margin: 0 1rem;
+  }
+  
+  /* Bio Section */
+  #photobio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "pfp landing_bio";
+    gap: 1.5rem;
+    justify-items: center;
+    margin: 2rem auto;
     max-width: 750px;
-    max-height: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
-
-#pfp{
-    max-width: 270px;
-    max-height: 405px;
-    grid-area: pfp;
-    display: grid;
-    margin-top: 5px;
-}
-
-#landing_bio{
-    grid-area: landing_bio;
-    display: grid;
-    margin-right: auto;
-    font-size: 13pt;
+  }
+  
+  #pfp {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  #landing_bio {
+    font-size: 1rem;
     font-weight: 400;
     line-height: 2;
-    padding-left: 32px;
-    width: 424px;
-    color:#303030;
-}
-
-/* This is for the about page */
-
-#aboutcontainer{
+    color: #303030;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  /* About Page */
+  #aboutcontainer {
     display: grid;
-    grid-area: aboutcontainer;
-    grid-template-areas: "aboutphotobio" "afterfirstpg";
+    gap: 1rem;
+  }
+  
+  #aboutphotobio {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+  margin: 2rem auto;
+  max-width: 900px;
 }
-
-#aboutphotobio{
-    display: grid;
-    grid-area: aboutphotobio;
-    grid-template-areas: "about_bio about_pfp";
-}
-
-#about_bio{
-    grid-area: about_bio;
-    display: grid;
-    margin-left: auto;
-    font-size: 13pt;
-    font-weight: 400;
-    line-height: 2;
-    padding-right: 32px;
-    width: 424px;
-    color:#303030;
-}
-
-#about_bio span{
+  
+  #about_bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #303030;
+  }
+  
+  #about_bio span {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 15px;
-}
-
-#about_pfp{
-    max-width: 270px;
-    max-height: 405px;
-    grid-area: about_pfp;
-    display: grid;
-    padding-top: 15px;
-}
-
-#afterfirstpg{
-    margin-top: 30px;
-    font-size: 13pt;
-    font-weight: 400;
-    line-height: 2;
-    width: 725px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* This is for the experience page */
-
-#exp{
-    padding: 2px;
-}
-
-.experience{
-    padding-top: 15px;
-}
-
-#work_bio{
-    line-height: 15px;
-    
-}
-
-#work_bio h1{
-    line-height: 1.3;
-}
-
-#work_bio p{
-    font-size: 11pt;
-    font-weight: 400;
-    line-height: 2;
-}
-
-#work_bio ul{
-    font-size: 11pt;
-    font-weight: 400;
-    line-height: 2;
-}
-
-
-#work_photo{
-    max-width: 405px;
-    max-height: 405px;
-    grid-area: work_photo;
-    display: grid;
-    margin: auto;
-}
-
-#companyname{
-    color: #303030;
-}
-
-#recent{
-    display: grid;
-    grid-template-areas: "work_photo work_bio";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-}
-
-#second{
-    display: grid;
-    grid-template-areas: "work_bio work_photo";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-}
-
-#third{
-    display: grid;
-    grid-template-areas: "work_photo work_bio";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-}
-
-/* This is for the blog*/
-
-#cardokun{
-    background-color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-#cardokun img{
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  #about_pfp {
+    max-width: 300px;
     width: 100%;
-    border-radius: 12px;
-    height: 214px;
-    object-fit: cover;  
-}
-
-#card_container{
+    margin: 0 auto;
+  }
+  
+  #afterfirstpg {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+  }
+  
+  /* Experience Page */
+  .experience {
+    padding-top: 1rem;
+  }
+  
+  #work_bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  
+  #work_photo {
     max-width: 300px;
-    margin-right: 450px;
-}
-
-#card_container2{
-    max-width: 300px;
-}
-.card{
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  #recent,
+  #second,
+  #third {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  /* Blog Cards */
+  #cardokun {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .card {
     background-color: white;
     border: 1px solid #bacdd8;
-    padding: 8px;
+    padding: 1rem;
     border-radius: 12px;
-}
-
-.tag{
-  padding: 4px 8px;
-  border: 1px solid #e5eaed;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #788697;
-}
-
-/* Style div elements that have class equal to name */
-#cardname{
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 16px;
-}
-
-#cardokun{
-    display: grid;
-    grid-template-areas: "card_container2 card_container";
-}
-
-/* Style p element */
-#cardokun p {
-  font-size: 14px;
-  color: #7f8c9b;
-  line-height: 150%;
-  margin-bottom: 10px;
-}
-
-#cardokun button {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 50px;
-
-  font-weight: 600;
-  color: #0077ff;
-  background-color: #e0efff;
-
-  /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
-  margin: 0 auto;
-  display: block;
-
-  /* Button is a clickable element, therefore it should have a pointer cursor */
-  cursor: pointer;
-}
-
-.card__details {
-  /* Add space around the details */
-  padding: 16px 8px 8px 8px;
-}
-
-/* Add style when button is focused or hovered */
-#cardokun button:focus,
-#cardokun button:hover {
-  background-color: #0077ff;
-  color: #e0efff;
-}
-
-/* This is for the footer */
-
-/* Solid border */
-hr.solid {
+  }
+  
+  #cardokun img {
+    width: 100%;
+    border-radius: 12px;
+    height: 200px;
+    object-fit: cover;  
+  }
+  
+  .tag {
+    padding: 4px 8px;
+    border: 1px solid #e5eaed;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #788697;
+  }
+  
+  #cardname {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  #cardokun p {
+    font-size: 0.9rem;
+    color: #7f8c9b;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  
+  #cardokun button {
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #0077ff;
+    background-color: #e0efff;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  #cardokun button:hover {
+    background-color: #0077ff;
+    color: #e0efff;
+  }
+  
+  /* Footer */
+  hr.solid {
     border-top: 2px solid #bbb;
-    margin-left: 70px;
-    margin-right: 70px
+    margin: 1rem auto;
+    max-width: 900px;
+  }
+  
+  /* Maps */
+  #restaurant_portion {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  #restaurant_interface {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  #restaurant_map {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  #restaurant_survey {
+    height: auto;
+  }
+  
+  #the_map,
+  #the_map2,
+  #the_map3 {
+    height: 60vh;
+    margin: 1rem auto;
+    width: 100%;
+    border-radius: 8px;
   }
 
-/* This is for the restaurant map */
+   /* Large screens */
 
-#restaurant_portion{
-    grid-area: restaurant_portion;
-    grid-template-areas: "restaurant_heading" "restaurant_interface";
-    display:grid;
-    grid-template-rows: 70px auto auto;
-    gap: 80px;
-
-}
-
-#restaurant_interface{
-    display: grid;
-    grid-template-columns: 1fr .6fr;
-    grid-template-areas: "restaurant_map restaurant_survey";
-    grid-area: restaurant_interface;
-}
-
-#restaurant_map{
-    grid-area: restaurant_map;
-    display:grid;
-    grid-template-rows: .2fr 3fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "buttons2" "main_map3";
-}
-
-#restaurant_survey{
-    height: 90vh;
-    grid-area: restaurant_survey;
-}
-
-#buttons2{
-    grid-area: buttons2;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#restaurant_heading{
-    grid-area: restaurant_heading;
-    justify-self: left;
-}
-
-/* This is for the work map */
-
-#work_portion{
-    grid-area: work_portion;
-
-}
-
-#the_map3{
-    height:80vh;
-    margin: 2%;
-    grid-area: main_map3;
-}
-
-#travel_portion{
-    grid-area: travel_portion;
-
-}
-
-
-
-
-#the_map{
-    height:80vh;
-    grid-area: auto;
-    margin: 2%;
-    grid-area: main_map1;
-}
-
-#the_map2{
-    height:80vh;
-    grid-area: auto;
-    margin: 2%;
-    grid-area: main_map2;
-}
-
-@media (max-width: 768px) {
-    body {
-        grid-template-areas:
-            "header"
-            "main_content"
-            "footer";
-        display: grid;
-    }
+  @media (min-width: 1200px) {
 
     .header {
-        grid-template-areas:
-            "plaque"
-            "navigation";
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
-    .main_content{
-        height: 100%;
-        display: grid;
-        grid-template-areas: "hero" "photobio";
-    }
-    .footer{
-        display: grid;
-        margin-top: 350px;
-    }
-
-    #front {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
+  
     #photobio {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "pfp"
-            "landing_bio";
+      grid-template-columns: 1fr 2fr;
+      text-align: left;
+      align-items: center;
+    }
+  
+    #landing_bio {
+      text-align: left;
+      padding-left: 1rem;
+      line-height: 2;
+    }
+  
+    #aboutphotobio {
+      grid-template-columns: 2fr 2.5fr;
+      align-items: center;
+    }
+  
+    #recent,
+    #second,
+    #third {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    #cardokun {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    #restaurant_interface {
+      grid-template-columns: 2fr 1fr;
+    }
+    
+    #hero h1 {
+      font-size: 3rem;
+    }
+  
+    #pfp {
+      max-width: 270px;
+    }
+  
+    #work_photo {
+      max-width: 400px;
     }
 
     #landing_bio {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-    }
-    
-    #pfp {
-        max-width: 100%;
-        max-height: 100%;
-        margin: 0 auto;
-    }
-}
-   
+        text-align: left;
+        padding-left: 1rem;
+        line-height: 2.25;
+      }
 
+    #plaque {
+        margin-left: 6rem;
+        margin-top: 1rem;
+
+    }
+    #navigation {
+        gap: 6rem;
+        font-size: 1.25rem;
+        margin-right: 12rem
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    #photobio {
+      grid-template-columns: 1fr 2fr;
+      text-align: left;
+      align-items: center;
+    }
+  
+    #landing_bio {
+      text-align: left;
+      padding-left: 1rem;
+      line-height: 2;
+    }
+  
+    #aboutphotobio {
+      grid-template-columns: 2fr 2fr;
+      align-items: center;
+    }
+  
+    #recent,
+    #second,
+    #third {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    #cardokun {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    #restaurant_interface {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    #navigation {
+        gap: 6rem;
+    }
+
+    plaque {
+      margin-left: 2rem;
+      margin-top: 1rem;
+
+  }
+
+
+  }
+  
+ 
+ /* Small screens */
+  
+  @media (max-width: 767px) {
+    .header {
+      flex-direction: column;
+      align-items: center; 
+      gap: 1rem;
+      text-align: center;
+    }
+  
+    #plaque {
+      text-align: center; 
+    }
+  
+    #navigation {
+      justify-content: center; 
+      gap: 1rem
+    }
+
+    #hero {
+      display:none;
+    }
+
+    #aboutphotobio {
+    grid-template-columns: 1fr; 
+  }
+
+  #about_pfp {
+    order: -1; 
+    justify-self: center;
+    max-width: 250px; 
+    margin-bottom: 1rem;
+  }
+  }

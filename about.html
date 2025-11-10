@@ -13,22 +13,23 @@
         <!-- Leaflet's JavaScript-->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src='https://unpkg.com/leaflet-arc/bin/leaflet-arc.min.js'></script>
 
     </head>
 
     <body>
-        <div class="header">
+        <header class="header">
             <div id="plaque">
                 <a href="index.html" id="name">Mohammed Azad</a>
-                <h2 id="subtitle">LA Civil Rights Policy Fellow</h2>
+                <h2 id="subtitle">Data Analyst</h2>
             </div>
-            <div id="navigation">
+            <nav id="navigation">
                 <a href="about.html">About Me</a>
                 <a href="experience.html">Experience</a>
-                <a href="https://github.com/shintuzd">Github</a>
+                <a href="https://github.com/shintuzd" target="_blank">Github</a>
                 <a href="blog.html">Blog</a>
-            </div>
-        </div>
+            </nav>
+        </header>
 
         <div class="main_content">
             <div id="contents">
@@ -36,40 +37,42 @@
                 <div id="hero">
                     <h1> About Me</h1>
                 </div>
-                <div id=aboutcontainer> 
+                <div id="aboutcontainer"> 
                     <div id="aboutphotobio">
                         <img id="about_pfp" src="images/IMG_0572.jpg" alt="Mohammed Azad Headshot">
-                        <p id="about_bio"> 
-                            <span> A passion for progressive change.</span> 
-                            Mohammed Azad is a Bangladeshi American born and raised in Los Angeles. 
-                            Growing up in a low-income neighborhood, he has seen the effects issues like unaffordable housing, lack of green space, and wealth inequality have on his community. 
-                            These experiences have shaped his purpose towards community and policy-centered work to improve the peoples’ quality of life. 
-                            Now, Mohammed is a Policy Fellow with the Los Angeles Civil Rights Department, and a recent UCLA graduate with a B.A. in Public Affairs. 
+                         <p id="about_bio"> 
+                            <span> Community and Public-Centered Work</span> 
+                            As mentioned, I’m currently a Data Analyst with the City of Los Angeles. 
+                            My career began as an intern working for former Mayor Eric Garcetti’s office, where I helped the Central Area Representative receive and respond to community concerns. 
+                            Later, I joined former City Controller Ron Galperin’s office primarily to analyze how the City’s fines and fees are impacting Angelenos, and make that information available to the public. 
+                            After briefly continuing this work under City Controller Kenneth Mejia, I supported the Civil + Human Rights and Equity Department’s efforts to mitigate various Citywide inequities and historical injustices. 
+                            Today, I transform data into actionable insights that guide strategy, improve policy, program and service delivery, and drive measurable impact in addressing homelessness and housing needs in Los Angeles. 
+                            While I’m focused on improving the intersection between technology and public affairs, I’ve ensured that the underlying theme in my work goes back to improving the quality of life for people in Los Angeles one way or another.
                         </p>
                     </div>
-                <p id="afterfirstpg"> While studying at UCLA’s Luskin School of Public Affairs, Mohammed grew an interest in data science and social science research. 
-                    He saw the power behind research and data analysis to promote policies and programs when aligned with communities’ visions. 
-                    Mohammed’s goal is to use his data science and research skills to bring stronger support towards progressive policies and programs. 
-                    He also hopes to use these skills to innovate government operations and services to be more efficient.  <br /> 
+
+                <p id="afterfirstpg">  A large part of my work originates while studying at UCLA’s Luskin School of Public Affairs. While I knew that I wanted to do public-centered work in my undergrad, it was here that I was able to dive into the intersection between data science and social science research. I saw the power behind different data tools to uncover trends, correlations, and patterns among social issues. There was power in pairing this data analysis with communities’ visions or other research to promote effective policies and programs. It slowly shaped my goal to use these technical and research skills to develop effective policies and innovate public service delivery. To this day, I use what I’ve learned at UCLA to see how we can adapt new emerging technologies to address the social issues that exist today.  <br /> 
                     <br /> 
-                    In his spare time, Mohammed enjoys making content such as vlogs, food and movie reviews, and insightful analyses of social issues. 
-                    He also enjoys working out through weights, basketball, and running (3x LA Marathon finisher!). 
-                    His biggest aspiration is to travel around the world and experience all types of new food, environments, and overall culture. 
-                    Mohammed also volunteers with local organizations and Humanitarian OpenStreetMap.  </p>
+                    Growing up as a Bengali in Koreatown’s Little Bangladesh has played a significant role towards the work that I do. I’ve witnessed the effects of issues like unaffordable housing, lack of quality green spaces, and wealth inequality first hand by living here, and it’s why I’m determined to address these issues at a larger scale. That’s not to say Koreatown or Los Angeles is riddled with all these problems. Growing up here has also shown me the beauty of LA. Even with the issues that exist, the culture, people, and diversity that come with this city is worth maintaining and preserving, and serves as a significant reminder throughout my career. (Fun fact: I personally struggle to hold myself back from trying all the different restaurants in LA to avoid financial destitution.)
+                  </p>
                 </div>
+                <h3 class="heading"> Every Restaurant I've Ever Eaten At 🥘</h3>
+                <div id="the_map2"></div>
+                <p id="afterfirstpg">In my free time, I enjoy making content such as vlogs, food and movie reviews (and sometimes some analyses of social issues). There’s something about keeping a record of the things I did and enjoyed - it feels like etching something into history. I also like to work out through strength training, basketball, hiking and running (3x LA Marathon finisher!). My biggest aspiration is to travel around the world and experience all types of new food, environments, and learn about different cultures. </p>
                 <div id="travel_portion">
                     <h3 class="heading"> Places I've Visited Around The World 🌎</h3>
                     <div id="the_map"></div>
+                    
                 </div>
             </div>
         </div>
         </div>
-        <div class="footer"> 
+        <footer class="footer"> 
             <hr class="solid">
             <p style="line-height: 25px;">Get in Touch! <br>
             E-Mail: shintuzd@gmail.com</p>
-            <p style="text-align: right"> Copyright (2023) </p>
-        </div>     
+            <p style="text-align: right"> © 2025 Mohammed Azad</p>
+        </footer>    
         <script src="js/init.js"></script>
     </body>
 </html>

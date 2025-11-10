@@ -227,6 +227,118 @@
       },
       {
         "type": "Feature",
+        "properties": {
+          "city": "Chicago",
+          "description": "It was cold"
+        },
+        "geometry": {
+          "coordinates": [
+            41.88015418483668, 
+            -87.62691854949401
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Evanston",
+          "description": "Northwestern University"
+        },
+        "geometry": {
+          "coordinates": [
+            42.058029892904976, 
+            -87.67458635920173
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Washington DC",
+          "description": "Cherry blossoms!"
+        },
+        "geometry": {
+          "coordinates": [
+            38.898301917628295, 
+            -77.03672478757856
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "CDMX",
+          "description": "Tacos"
+        },
+        "geometry": {
+          "coordinates": [
+            19.42365519650879, 
+            -99.16298396458282
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Tokyo",
+          "description": "I need to go back"
+        },
+        "geometry": {
+          "coordinates": [
+            35.6822129876384, 
+            139.761799449917
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Kyoto",
+          "description": "Very peaceful"
+        },
+        "geometry": {
+          "coordinates": [
+            35.01233585722061, 
+            135.76038526857138
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Osaka",
+          "description": "Very chaotic"
+        },
+        "geometry": {
+          "coordinates": [
+            34.69448220545291, 
+            135.5012313852131
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "city": "Nara",
+          "description": "Deer poop"
+        },
+        "geometry": {
+          "coordinates": [
+            34.68838746093732, 
+            135.8156350952597
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
         "properties": {},
         "geometry": {
           "coordinates": [

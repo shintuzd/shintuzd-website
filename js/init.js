@@ -1,36 +1,43 @@
-// Mapping Favorite Restaurants Map
 
-let anon = L.featureGroup();
-let person = L.featureGroup();
-
-let layers = {
-    "Anonymous Respondent": anon,
-    "Identifiable Respondent": person
-}
-
-let circleOptions = {
-    radius: 4,
-    fillColor: "#ff7800",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
-}
-
-// Survey Spreadsheet Dataset
-const surveyUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3JMLOzEGJEKn7YFIig9PCzerJO5TofP09ThGtSsqt41yRbZDP9BlPrFSyLAjEKR4cmkIoR2N5MYbR/pub?output=csv"
+// Places I've Been Map URL
 const placesUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkmSXxg8YWhtkeX7iiBcY-uYjHURNjBdMz9iNUGyUIekHd2Jfp1CqxVRbvwHt-uJZF0ecZWctmHCim/pub?output=csv"
 
-// JSON for the Map Center and Zoom
+// Places I've Ate Map URL
+const foodUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8PYlhZJ6W-p4IJV4rDACwrBENCbrMBQaH2SVtGDnWW24vwfEgXv50UET6sJxgDl39Ox-GJmiukfj3/pub?output=csv"
+
+// Places I've Been Map
+const map = L.map('the_map', {
+    maxBounds: [[-90, -180], [90, 180]], // restricts view to one world
+    maxBoundsViscosity: 1.0,
+    minZoom: 2,
+}).setView([48.742474, -35.568517], 2); // (1)!
+
+// Places I've Ate Map
+const foodmap = L.map('the_map2', {
+    maxBounds: [[-90, -180], [90, 180]], // restricts view to one world
+    maxBoundsViscosity: 1.0,
+    minZoom: 2,
+}).setView([34.003564514142624, -118.32031826962323], 10); // (1)!
 
 
-function addMarker(data, target_map=1){
-    if (target_map == 3){
-        
-        return data
-    }
-    else {
-        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.city}</h2> <h3>${data.description}</h3>`)
+// Add Marker Function
+
+function addMarker(data, target_map) {
+    if (target_map === 3) {
+    const redPinIcon = L.icon({
+      iconUrl: "images/80b2b82a0488e38c372a3ff50421a7af.png", // your local image path
+      iconSize: [30, 30],   // adjust as needed
+      iconAnchor: [16, 30], // bottom center of the pin
+      popupAnchor: [0, -45] // popup appears above the pin
+    });
+
+    L.marker([data.LAT, data.LON], { icon: redPinIcon })
+      .addTo(foodmap)
+      .bindPopup(`<h2>${data.Name}</h2>`);
+    } else {
+        L.marker([data.lat, data.lng])
+        .addTo(map)
+        .bindPopup(`<h2>${data.city}</h2> <h3>${data.description}</h3>`);
     }
 }
 
@@ -44,60 +51,128 @@ function loadData(url, tgt_map){
     })
 }
 
-// Processing the data into the map
+let colorMap = {}; // store colors per route
+
+function addGreatCircleSegment(from, to, options) {
+    // Generate great-circle arc using leaflet-arc
+    let arcLine = L.Polyline.Arc(from, to, {
+        vertices: 200,
+        ...options
+    });
+
+    // Extract coords
+    let coords = arcLine.getLatLngs();
+
+    // Normalize longitudes into [-180, 180]
+    coords = coords.map(pt => {
+        let lng = pt.lng;
+        if (lng > 180) lng -= 360;
+        if (lng < -180) lng += 360;
+        return L.latLng(pt.lat, lng);
+    });
+
+    // Split at the dateline
+    let splitCoords = [[]];
+    let prev = coords[0];
+    splitCoords[0].push(prev);
+
+    for (let i = 1; i < coords.length; i++) {
+        let curr = coords[i];
+
+        // If longitude "jumps" across the globe, break the line
+        if (Math.abs(curr.lng - prev.lng) > 180) {
+            splitCoords.push([curr]);
+        } else {
+            splitCoords[splitCoords.length - 1].push(curr);
+        }
+        prev = curr;
+    }
+
+    // Add each clean segment
+    splitCoords.forEach(seg => {
+        if (seg.length > 1) {
+            L.polyline(seg, {
+                ...options,
+                noClip: true
+            }).addTo(map);
+        }
+    });
+}
+
 function processData(results, tgt_map){
+    let routes = {};
+    let seenCities = {};
+
+    if (tgt_map == 3){
+        results.data.forEach(data => {
+        addMarker(data, 3)
+    }
+        )}
+
+    else{
     results.data.forEach(data => {
-        if (tgt_map ==3){
-            addMarker(data, 3)
+        if (!data.lat || !data.lng) return;
+        let coords = [parseFloat(data.lat), parseFloat(data.lng)];
 
+        // --- Unique city markers ---
+        if (!seenCities[data.city]) {
+            if (tgt_map == 3){
+                addMarker(data, 3);
+            } else {
+                addMarker(data);
+            }
+            seenCities[data.city] = true;
         }
-        else{
-            addMarker(data)
+
+        // --- Collect route points ---
+        if (data.route_id){
+            if (!routes[data.route_id]){
+                routes[data.route_id] = [];
+            }
+            routes[data.route_id].push(coords);
         }
-        
-    })
+    });
+
+    // --- Draw curved segments with dateline handling ---
+    for (let route_id in routes){
+        let color = getColor(route_id);
+        let pts = routes[route_id];
+
+        for (let i = 0; i < pts.length - 1; i++){
+            addGreatCircleSegment(pts[i], pts[i+1], {
+                color: color,
+                weight: 3,
+                opacity: 0.8
+            });
+        }
+    }
+}
 }
 
-// this is our function call to get the data
+function getColor(route_id){
+    const palette = ["red","blue","green","orange","purple","brown","pink"];
+    if (!colorMap[route_id]){
+        colorMap[route_id] = palette[Object.keys(colorMap).length % palette.length];
+    }
+    return colorMap[route_id];
+}
+
+
 // we will put this comment to remember to call our function later!
-loadData(surveyUrl, 3)
 loadData(placesUrl, 1)
-
-// Places I've worked map
-
-let mapOptions = {'center': [34.05486654874919, -118.26360364555003],'zoom':14}
-
-function createButtons(lat,lng,title){
-  const newButton = document.createElement("button"); // adds a new button
-  newButton.id = "button"+title; // gives the button a unique id
-  newButton.innerHTML = title; // gives the button a title
-  newButton.setAttribute("lat",lat); // sets the latitude 
-  newButton.setAttribute("lng",lng); // sets the longitude 
-  newButton.addEventListener('click', function(){
-      map2.flyTo([lat,lng], 16); //this is the flyTo from Leaflet
-  })
-  document.getElementById("buttons").appendChild(newButton); //this adds the button to our page.
-}
-
-function textPopup(feature, layer){
-  layer.bindPopup(
-      `<h2>${feature.properties.job_name}</h2> <h3>Job Type: ${feature.properties.job_type}</h3> <p>${feature.properties.description} </p>`
-    );
-  createButtons(
-    feature.geometry.coordinates[1],
-		feature.geometry.coordinates[0],
-		feature.properties.job_name,
-	);
-}
-
-
-// Places I've Been Map
-
-const map = L.map('the_map').setView([48.742474, -35.568517], 2); // (1)!
+loadData(foodUrl, 3)
 
 // Leaflet tile layer, i.e. the base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    noWrap: true,
+    bounds: [[-90, -180], [90, 180]],
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    noWrap: true,
+    bounds: [[-90, -180], [90, 180]],
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(foodmap);
 
 //JavaScript let variable declaration to create a marker
