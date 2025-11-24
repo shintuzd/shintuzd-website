@@ -12,7 +12,6 @@
         <!-- Leaflet's JavaScript-->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
     </head>
 
     <body>
@@ -33,85 +32,104 @@
                 <div id="front">
                 <div id="hero">
                     <h1> Projects </h1>
-                    <p> <em> This section is still being updated! </em> </p>
-
                 </div>
-                <div id="cardokun">
-                <!-- A div with container id to hold the card -->
-                    
-                <div id="card_container2">
-                <!-- A div with card class for the card  -->
+
+                <div id="cardokun"> 
+
+                    <div id="card_container2">
                         <div class="card">
-                        <img src="images/Screenshot 2023-08-29 at 2.14.19 AM.png" alt="Map of Hispanic distribution in Los Angeles">
-  <!-- A div with card__details class to hold the details in the card  -->
-                        <div class="card__details">
-    <!-- Span with tag class for the tag -->
-                            <span class="tag">City of LA</span>
-                            <span class="tag">Resource</span>
-                            <!-- A div with name class for the name of the card -->
-                            <div id="cardname">EnviroScreen LA</div>
-                            <p></p>
-                            <p> Using data from CalEnviroScreen 4.0, I limited the variables to focus solely on the City of Los Angeles. These maps are faster and more user friendly for LA's organizers and decision makers.</p>
-                            <a href='https://shintuzd.github.io/EnviroScreenLA/'><button>Read more</button></a>
-                        </div>
+                            <img src="images/Screenshot 2023-08-29 at 2.14.19 AM.png" alt="Map of Hispanic Distribution in Los Angeles">
+                            <div class="card__details">
+                                <span class="tag">City of LA</span>
+                                <span class="tag">Resource</span>
+                                <div id="cardname">EnviroScreen LA</div>
+                                <p></p>
+                                <p> Using data from CalEnviroScreen 4.0, I limited the variables to focus solely on the City of Los Angeles. These maps are faster and more user friendly for LA's organizers and decision makers.</p>
+                                <a href='https://shintuzd.github.io/EnviroScreenLA/' target="_blank"><button>Read more</button></a>
+                            </div>
                         </div>
                     </div>
+
                     <div id="card_container">
-                    <!-- A div with card class for the card  -->
                         <div class="card">
                             <img src="images/CHRD_Final_Homepage_Hero_10062020.jpg.webp.jpeg" alt="Diversity Sihlouette">
-      <!-- A div with card__details class to hold the details in the card  -->
                             <div class="card__details">
-        <!-- Span with tag class for the tag -->
                                 <span class="tag">City of LA</span>
                                 <span class="tag">Data Analysis</span>
                                 <!-- A div with name class for the name of the card -->
                                 <div id="cardname">Progress & Gaps in the City's Workforce</div>
+                                <p></p>
                                 <p> Using the LA City Controller's 2022 Payroll Data, I conducted a simple analysis of workforce demographics and total pay by gender and ethnicity.</p>
-                                <a href='docs/LA City Workforce Analysis (2022).html'><button>Read more</button></a>
+                                <a href='docs/LA City Workforce Analysis (2022).html' target="_blank"><button>Read more</button></a>
                             </div>
                         </div>
                     </div>
+
                     <div id="card_container2">
-                <!-- A div with card class for the card  -->
                         <div class="card">
-                        <img src="/images/Visual 1A - Homelessness and Housing Hub.png" alt="Map of Hispanic distribution in Los Angeles">
-  <!-- A div with card__details class to hold the details in the card  -->
+                        <img src="images/Screenshot 2025-11-22 at 11.08.14 PM.png" alt="Cover for Digital Inclusion in Los Angeles StoryMap">
                         <div class="card__details">
-    <!-- Span with tag class for the tag -->
                             <span class="tag">City of LA</span>
-                            <span class="tag">Homelessness</span>
-                            <span class="tag">Housing</span>
-                            <span class="tag">Data Analysis</span>
-                            <!-- A div with name class for the name of the card -->
-                            <div id="cardname">Homelessness & Housing Hub</div>
+                            <span class="tag">Resource</span>
+                            <span class="tag">Equity</span>
+                            <div id="cardname">Digital Inclusion in Los Angeles</div>
                             <p></p>
-                            <p> This dashboard was created to visualize progress being made in regards to Prop HHH, and various statistics/resources pertaining to the issue of homelessness in Los Angeles. Please note that this dashboard was retired on December 2022.</p>
-                            <a href='docs/HHHhub.html'><button>Read more</button></a>
+                            <p>This StoryMap examines the issue of the digital divide in Los Angeles. As technology grows in every facet of our lives, it's imperative that everyone has access to techolofy. This resource analyzes the inequity across Los Angeles, and what the City of Los Angeles is doing to bridge the digital divide.</p>
+                            <a href='https://storymaps.arcgis.com/stories/4d771e9bbdef4a0385d3527541447a59' target="_blank"><button>Read more</button></a>
                         </div>
                         </div>
                     </div>
+
                     <div id="card_container2">
-                <!-- A div with card class for the card  -->
                         <div class="card">
-                        <img src="images/Screenshot 2025-11-22 at 9.54.41 PM.png" alt="Map of Hispanic distribution in Los Angeles">
-  <!-- A div with card__details class to hold the details in the card  -->
-                        <div class="card__details">
-    <!-- Span with tag class for the tag -->
+                            <img src="images/Screenshot 2025-11-23 at 7.10.27 PM.png" alt="Presentation Cover for the Report regarding Violence Against Black & Latina Women">
+                            <div class="card__details">
                             <span class="tag">City of LA</span>
-                            <span class="tag">Culture</span>
-                            <!-- A div with name class for the name of the card -->
-                            <div id="cardname">Latinx Heritage Month 2022</div>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Equity</span>
+                            <div id="cardname">Violence Against Black & Latina Women</div>
                             <p></p>
-                            <p> This StoryMap was created for the 2022 Latinx Heritage Month during my internship with the LA City Controller. It provides a guided tour throughout Hispanic Heritage locations in LA, and data visualizations hiighting pay equity gaps among Hispanic City employees.</p>
-                            <a href='https://storymaps.arcgis.com/stories/ef7618624f2f4628883dd9f6ec8d4660'><button>Read more</button></a>
+                            <p>This report recognizes growing violence against women of color and acknowledges opportunities to bolster safety for communities most impacted by violence. As a co-author, I analyzed LAPD data to report the crime statistics of violence against women across the City of LA.</p>
+                            <a href='https://cityclerk.lacity.org/onlinedocs/2022/22-0102_misc_3-17.pdf' target="_blank"><button>Read more</button></a>
+                            </div>
                         </div>
+                    </div>
+
+                    <div id="card_container2">
+                        <div class="card">
+                            <img src="/images/Visual 1A - Homelessness and Housing Hub.png" alt="Screenshot of Homelessness and Housing Hub">
+                            <div class="card__details">
+                                <span class="tag">City of LA</span>
+                                <span class="tag">Homelessness</span>
+                                <span class="tag">Housing</span>
+                                <span class="tag">Data Analysis</span>
+                                <div id="cardname">Homelessness & Housing Hub</div>
+                                <p></p>
+                                <p> This dashboard was created to visualize progress being made in regards to Prop HHH, and various statistics/resources pertaining to the issue of homelessness in Los Angeles. Please note that this dashboard was retired on December 2022.</p>
+                                <a href='docs/HHHhub.html'><button>Read more</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="card_container2">
+                        <div class="card">
+                            <img src="images/Screenshot 2025-11-22 at 9.54.41 PM.png" alt="Cover of Latinx Heritage Month 2022 Storymap">
+                            <div class="card__details">
+                                <span class="tag">City of LA</span>
+                                <span class="tag">Resource</span>
+                                <span class="tag">Culture</span>
+                                <div id="cardname">Latinx Heritage Month 2022</div>
+                                <p></p>
+                                <p> This StoryMap was created for Latinx Heritage Month in 2022. It provides a guided tour throughout Hispanic Heritage locations in LA, and data visualizations hiighting pay equity gaps among Hispanic City employees.</p>
+                                <a href='https://storymaps.arcgis.com/stories/ef7618624f2f4628883dd9f6ec8d4660' target="_blank"><button>Read more</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 </div>
             </div>
         </div>
+
         <footer class="footer"> 
             <hr class="solid">
             <p style="line-height: 25px;">Get in Touch! <br>
